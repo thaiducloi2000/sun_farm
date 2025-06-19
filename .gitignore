@@ -83,3 +83,7 @@ crashlytics-build.properties
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
 /[Aa]ssets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+Assets/T70/com.team70.corelib/
+Assets/T70/com.team70.editor-tools/
+Assets/T70/com.team70.corelib.meta
+Assets/T70/com.team70.editor-tools.meta
