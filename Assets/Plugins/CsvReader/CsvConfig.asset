@@ -21,3 +21,5 @@ MonoBehaviour:
   enabledFilter:
     enabled: 0
     namespaceList: []
+  downloaderConfigPath: Assets/Plugins/CsvReader/DownloaderConfig
+  credentialFile: {fileID: 4900000, guid: b35c7114b610c464693b31c4844d1d7c, type: 3}

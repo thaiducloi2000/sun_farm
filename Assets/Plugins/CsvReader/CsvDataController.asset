@@ -14,3 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   csvDataName: 
   readerData: []
+  csvDownloadGroupName: SunFarm_Config
+  downloaderData:
+  - {fileID: 11400000, guid: 3ae574a7ecce78642890e024c9e422ef, type: 2}
+  - {fileID: 11400000, guid: 198897c0886850d46a674120f8562879, type: 2}

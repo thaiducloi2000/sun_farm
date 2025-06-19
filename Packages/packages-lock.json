@@ -14,6 +14,13 @@
       "dependencies": {},
       "hash": "f789083c31250c83082da9b29be0c976152d699b"
     },
+    "com.littlekid.event-bus": {
+      "version": "https://github.com/thaiducloi2000/event-bus.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "806fd97d5b4047464226b4e0cb59fe9dd6deb54c"
+    },
     "com.unity.ai.navigation": {
       "version": "2.0.5",
       "depth": 0,
