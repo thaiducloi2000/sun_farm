@@ -1,0 +1,2 @@
+worker_id,worker_name,hire_cost,action_time_per_task,description,item_type
+woker_01,woker,500,2,worker_description_text,Worker

@@ -1,0 +1,7 @@
+item_type,item_id,amount
+Seed,plant_01,10
+Seed,plant_02,10
+Animal,animal_01,2
+Building,building_01,3
+Worker,woker_01,1
+Equipment,equipment_01,1

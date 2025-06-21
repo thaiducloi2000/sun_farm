@@ -1,0 +1,4 @@
+plant_id,plant_name,grow_time_per_yield,yield_per_cycle,max_yield,product_id,item_type
+plant_01,crop_tomato_txt,10,1,40,product_02,Seed
+plant_02,crop_blueberry_txt,15,1,40,product_03,Seed
+plant_03,crop_strawberry_txt,5,1,20,product_04,Seed
