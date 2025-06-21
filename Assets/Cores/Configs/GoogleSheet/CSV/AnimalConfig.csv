@@ -1,0 +1,2 @@
+animal_id,animal_name,produce_time_per_unit,max_yield,product_id,item_type
+animal_01,cow,30,100,product_01,Animal
