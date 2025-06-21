@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48964f8dfc931343af9c4058de12db4, type: 3}
+  m_Name: BuildConfig
+  m_EditorClassIdentifier: 
+  classInfomations:
+  - className: BuildConfig
+    csvInformations:
+    - csvType: 0
+      className: BuildConfig
+      csvFile: {fileID: 4900000, guid: 70dab3f4f3b204743ac38c32610b10be, type: 3}
+      csvPath: Assets/Cores/Configs/GoogleSheet/CSV/BuildConfig.csv
+      csvFolderPath: 
+      separateScriptableObject: 0
+      fileStartWith: 
+      fieldSetValue: Data
+      convertMethod: Load

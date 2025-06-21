@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cobalt-brand-352414",
+  "private_key_id": "e7e8c64a5cfc996958ab5a16c2806957d3b7e53a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCvNWPZnMBfRwk1\ntkCM0EVBsI8SJynatGNodW4JjwCVQIW7ANucW2VtvrhufhyA4Heuv8q0eefjaSko\nFm/MzyXFIHJ31/KLWkD50+YotS/1mqL8IknUC/58yydMn4XlTKjw1ARV8yNdNiXO\n4yts8B2f84zKao5roNw10r65/r8WG3otBa3Pajhr9SSClTM2YHg5jFEPTA0SFPMp\n30tSjcFd7Xnf1iTSmZtEdU+FNCCj9fFBd5cuCEpVLpABcYblRu2igUcS7B/A+Jtw\nCgb4Be+ZEiDSLZfgyMMY9Abn1UFvL8Or2XnA1oa1Xg3BHlOve23XrwMnkUsHAGTD\nAaQEtiz1AgMBAAECggEAE/j3Vqtof4PywBF0RskIGA6nJIfb3M9C5Lm8LzFCvQDT\nrcdRgX+mro226vuLxsIvyncZBZ0+6pzGgQgbuwJjGRdTjSdMAggqD4CRBFNxMeNs\nkGbdOSOb4UBsTK8DnamxOXDFxMF4ZswBH9YkEWFG00C5bCqc7RZze9w3+y5XvI55\nKrBwncc+Jn7pYX8oruyEn3bLJlCbOCDll6X34WKoPcBNXI26Nn8NGWhUTnuNZTUi\nONow4/2okX5tSMbHhhE5fhZ4j70gA//TxZlPHODjMltUaiS9OJPrcc9yX+chHrzN\nQka1ZgXmnFdoaqdoOqh8ZwG9tcdJUHTuOWzczSBFQQKBgQDu2/qeSQzCeS7P/Y/9\n5EsSn5WAjaaFn7IL2ADqHzVZNynEb+SPsrvEThNcVf5Ukk7/OGQUhLGjFseQF2Yr\nq6ieP1dPLgwSiK4pSKeOauFmUdfHR0KJGM6MI81Fyssaq66ceZA7X5NQpxDu5WvF\nXd4AZsfwPGDy22kIgR8ZT3czNQKBgQC7yBmjq6/H8OexewEkN/TpAd997Yk0zdCy\nK5CO87XU10FLGDv771OwadswDr0LZNwjhqi55vUX22En+4SxqQMG+qaikhafJDud\nvENowaPEVmp1umgt/v8sjutqLLmoUrep1itFblVtk8MM0IPuYB6hCezq5OsJSbZM\nGMu86waKwQKBgQDJRpMseJAI/EbnO1rv7kUYn2NCnZqZ9RT6h/1VTBEPab2Ha2Zl\ndI5nAAeugkQ7jcKFrEYhSCPMMzDdCeqtmAwRtXxkG4BOyeBAp5mSGBxxtTuoEDNQ\nBZhfXPfn/NgjVFJiRsm0Tnh7uRw6wxaKjOu62OFYXfiwDRW39d533I+slQKBgEkn\n/7Uf4e+HDvy56wvtMODF9gfdTqLfu/pttne6wpAU/D8BRf00k+oak2X5l/Skao78\nmycxrzKIKSWme1+rdJ53cAvN1jpRp1ggTDK3ndGTyQ3sfUHOIiN92oEWw42sDBmC\ncoEuJuH1uvt3EK8Bi205rK8mV9raeMbUsir7dSUBAoGBAK/OyLXvg2oOv5BIR2yq\nm2BlnF+mgSHWrK3MhZwkHRiS0wBBEg9hpEUE39JL/ov5/4OFSRYpgcrMY7PRGCzj\nHM8R8YjsbNn3mjR4tICFZBpGnF0MfYqGDZ3zouvgfOu2JfdCZ7QnQydC0K9Wi/bE\nk1o2hkaFHPo1FQQOQcpbYqeW\n-----END PRIVATE KEY-----\n",
+  "client_email": "googlesheetcredentials@cobalt-brand-352414.iam.gserviceaccount.com",
+  "client_id": "108054062718973564720",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/googlesheetcredentials%40cobalt-brand-352414.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
