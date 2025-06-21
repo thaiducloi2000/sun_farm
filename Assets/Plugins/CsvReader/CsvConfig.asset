@@ -13,13 +13,15 @@ MonoBehaviour:
   m_Name: CsvConfig
   m_EditorClassIdentifier: 
   assemblyNames:
-  - \Library\ScriptAssemblies\Assembly-CSharp-Editor.dll
+  - \Library\ScriptAssemblies\Assembly-CSharp.dll
   toolConfigPath: Assets/Plugins/CsvReader
   readerConfigPath: Assets/Plugins/CsvReader/ReaderConfig
-  csvPath: Assets/Core/Configs/GoogleSheet/CSV
-  scriptableObjectPath: Assets/Core/Configs/GoogleSheet/ScriptableObject
+  csvPath: Assets/Cores/Configs/GoogleSheet/CSV
+  scriptableObjectPath: Assets/Cores/Configs/GoogleSheet/ScriptableObject
   enabledFilter:
-    enabled: 0
-    namespaceList: []
+    enabled: 1
+    namespaceList:
+    - CoreGameplay
+    - Score
   downloaderConfigPath: Assets/Plugins/CsvReader/DownloaderConfig
   credentialFile: {fileID: 4900000, guid: b35c7114b610c464693b31c4844d1d7c, type: 3}

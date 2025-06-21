@@ -16,5 +16,21 @@ MonoBehaviour:
   googleSheetId: 1vgSpVIlwJsNwNhNNpD1Olsp8BUroJ3fPJqqj5bVkp-Q
   subFolder: 
   sheetsConfig:
-  - csvName: Config
+  - csvName: PlantConfig
+    selected: 1
+  - csvName: AnimalConfig
+    selected: 1
+  - csvName: ProductConfig
+    selected: 1
+  - csvName: BuildConfig
+    selected: 1
+  - csvName: BuildingConfig
+    selected: 1
+  - csvName: WorkerConfig
+    selected: 1
+  - csvName: 'FarmUpgradeConfig '
+    selected: 1
+  - csvName: EquipmentConfig
+    selected: 1
+  - csvName: StoreConfig
     selected: 1

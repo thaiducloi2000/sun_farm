@@ -16,5 +16,7 @@ MonoBehaviour:
   googleSheetId: 1BCqHVLFp6fo23MQ3-vjiLK4hGqceJVIrbtImyG06wJU
   subFolder: 
   sheetsConfig:
-  - csvName: CropType
+  - csvName: StarterConfig
+    selected: 1
+  - csvName: ItemType
     selected: 1

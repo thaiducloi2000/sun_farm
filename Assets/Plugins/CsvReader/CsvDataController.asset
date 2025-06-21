@@ -12,9 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f90c27c51c90fd408fe1d9d539c91be, type: 3}
   m_Name: CsvDataController
   m_EditorClassIdentifier: 
-  csvDataName: 
-  readerData: []
-  csvDownloadGroupName: SunFarm_Config
+  csvDataName: StoreConfig
+  readerData:
+  - {fileID: 11400000, guid: 02be03112c68a2f418a28eee9e859ec2, type: 2}
+  - {fileID: 11400000, guid: 90d709a775aa35d499b4b9e9148da96e, type: 2}
+  - {fileID: 11400000, guid: ac796d2bdad7bb04da59c36be54bc72a, type: 2}
+  - {fileID: 11400000, guid: dbff6a7af0e9c2542a4e4b527fddc5eb, type: 2}
+  - {fileID: 11400000, guid: d11de9e68fbb8374d8420cc2041bb9b5, type: 2}
+  - {fileID: 11400000, guid: f265b578596595e4c9b0cd51c6e910c7, type: 2}
+  - {fileID: 11400000, guid: 1bda14c30c641a947890c2691a793da9, type: 2}
+  - {fileID: 11400000, guid: 8682ca2e95295c14d9c8ec8e15e73571, type: 2}
+  - {fileID: 11400000, guid: 3346d74535223544f97359fe22ce16ee, type: 2}
+  - {fileID: 11400000, guid: 2e1d307c5d2cf0145b1bab0f98542cd9, type: 2}
+  - {fileID: 11400000, guid: 84e21ef2849264c41a70d54a3ed7bc08, type: 2}
+  csvDownloadGroupName: SunFarm_DataConfig
   downloaderData:
   - {fileID: 11400000, guid: 3ae574a7ecce78642890e024c9e422ef, type: 2}
-  - {fileID: 11400000, guid: 198897c0886850d46a674120f8562879, type: 2}
+  - {fileID: 11400000, guid: 6543e83789c5d0f4fb7ebf8bbc1d82c8, type: 2}
