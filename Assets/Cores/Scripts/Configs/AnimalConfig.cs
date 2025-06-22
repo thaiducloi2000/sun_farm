@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Score;
+using System;
+
 public class AnimalConfig : BaseConfig<AnimalData>
 {
     public static Dictionary<string, AnimalData> DctAnimalData { get; private set; } = new();
@@ -42,7 +44,8 @@ public class AnimalConfig : BaseConfig<AnimalData>
     public static bool Get(string id, out AnimalData result) =>
         DctAnimalData.TryGetValue(id, out result);
 }
-[System.Serializable]
+
+[Serializable]
 public class AnimalData
 {
     public string animal_id;
