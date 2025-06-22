@@ -12,6 +12,7 @@ public class GridManager : MonoBehaviourEventListener
     [Serializable]
     public struct GridListenerData : IEventData
     {
+        public int amount;
     }
 
     [Header("Grid Settings")] [Tooltip("Number of tiles in X direction (columns)")]
@@ -107,7 +108,22 @@ public class GridManager : MonoBehaviourEventListener
 
     private void OnSelectLand(int index)
     {
-        Debug.Log(index);
+        EventBus<GameplayEvent>.PostEvent((int)EventId_Gameplay.RequestBuildAtLand, new RequestBuildAtLand()
+        {
+            landIndex = index,
+            canBuildRespone = CanBuildLand,
+            refuseBuildRespone = RefuseBuildLand
+        } );
+    }
+
+    private void CanBuildLand()
+    {
+        
+    }
+
+    private void RefuseBuildLand()
+    {
+        
     }
     
     #region Pool

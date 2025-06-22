@@ -1,3 +1,4 @@
+using System;
 using EventBus;
 
 namespace Score
@@ -16,7 +17,14 @@ namespace Score
             public const string ItemType = "ItemType";
         }
     }
-
+    [Serializable]
+    public struct RequestBuildAtLand : IEventData
+    {
+        public int landIndex;
+        public Action canBuildRespone;
+        public Action refuseBuildRespone;
+    }
+    
     #region Marker Class for Event bus System 
     public class GameplayEvent : IEventChannel { }
     public class UIEvent : IEventChannel { }
@@ -29,12 +37,15 @@ namespace Score
         
         //Grid
         SpawnLand = 1000,
+        RequestBuildAtLand = 5000,
     }
     #endregion
     #region EventId_UI
     public enum EventId_UI
     {
         None = 0,
+        
+        // Request Popup
     }
     #endregion
 }
