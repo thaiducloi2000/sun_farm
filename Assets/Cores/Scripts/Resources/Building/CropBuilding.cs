@@ -25,6 +25,7 @@ public class CropBuilding : BuildingBase<PlantBuildData>
             return false;
         }
 
+        m_buildingState.SetState(m_data.current_yield_count > 0 ? 1 : 0);
         m_data.PlaceAt(index);
         return true;
     }

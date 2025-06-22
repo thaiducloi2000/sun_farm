@@ -2,7 +2,7 @@ using System;
 using Newtonsoft.Json;
 
 [Serializable]
-public struct PlantBuildData : IBuildData, IResource
+public class PlantBuildData : IBuildData, IResource
 {
     public PlantData PlantData;
     public DateTime time_planted_at { get; private set; }
@@ -10,7 +10,7 @@ public struct PlantBuildData : IBuildData, IResource
     public int plant_at_index { get; private set; }
     public int yield_count { get; private set; }
     public int current_yield_count { get; private set; }
-    
+    [field: JsonIgnore] public event Action OnYieldChange;
     public string product_id => PlantData.product_id;
     public int amount => current_yield_count;
     
@@ -55,6 +55,7 @@ public struct PlantBuildData : IBuildData, IResource
 
         yield_count++;
         current_yield_count++;
+        OnYieldChange?.Invoke();
         last_yield_time = DateTime.Now;
     }
 
@@ -97,7 +98,7 @@ public struct PlantBuildData : IBuildData, IResource
 }
 
 [Serializable]
-public class PlantBuildSaveData
+public struct PlantBuildSaveData
 {
     public string plant_id;
     public int plant_at_index;

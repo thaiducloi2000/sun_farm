@@ -1,6 +1,7 @@
+using EventBus;
+
 namespace Score
 {
-
     public static class GameDefine
     {
 
@@ -15,4 +16,25 @@ namespace Score
             public const string ItemType = "ItemType";
         }
     }
+
+    #region Marker Class for Event bus System 
+    public class GameplayEvent : IEventChannel { }
+    public class UIEvent : IEventChannel { }
+    #endregion
+
+    #region EventId_Gameplay
+    public enum EventId_Gameplay
+    {
+        None = 0,
+        
+        //Grid
+        SpawnLand = 1000,
+    }
+    #endregion
+    #region EventId_UI
+    public enum EventId_UI
+    {
+        None = 0,
+    }
+    #endregion
 }
