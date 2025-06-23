@@ -5,7 +5,7 @@ using Score;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Pool;
-using UnityEngine.UIElements;
+using UnityEngine.Serialization;
 
 public class GridManager : MonoBehaviourEventListener
 {
@@ -14,12 +14,6 @@ public class GridManager : MonoBehaviourEventListener
     {
         public int amount;
     }
-
-    [Header("Grid Settings")] [Tooltip("Number of tiles in X direction (columns)")]
-    public int TILE_COUNT_X;
-
-    [Tooltip("Number of tiles in Y direction (rows)")]
-    public int TILE_COUNT_Y;
 
     [Tooltip("Size of each tile")] public float TILE_SPACING_X;
     [Tooltip("Size of each tile")] public float TILE_SPACING_Y;
@@ -31,10 +25,14 @@ public class GridManager : MonoBehaviourEventListener
     public Land prefab;
 
     private IObjectPool<Land> m_Pool;
-
+    private BuildConfig m_BuildConfig;
 
     // List of tile scripts for interaction
-    [SerializeField] private List<Land> _tiles;
+    [FormerlySerializedAs("_tiles")] [SerializeField]
+    private List<Land> m_lands;
+
+    private int row;
+    private int col;
 
     /// <summary>
     /// Initializes the chess board grid
@@ -45,6 +43,8 @@ public class GridManager : MonoBehaviourEventListener
         {
             CreatePool();
         }
+
+        m_BuildConfig = DataContainer.BuildConfig;
     }
 
     #region Test
@@ -52,56 +52,65 @@ public class GridManager : MonoBehaviourEventListener
     [Button]
     public void ClickGenerateTiles()
     {
-        EventBus<GameplayEvent>.PostEvent((int)EventId_Gameplay.SpawnLand, new GridListenerData());
+        EventBus<GameplayEvent>.PostEvent((int)EventId_Gameplay.SpawnLand, new GridListenerData() { amount = 1 });
     }
 
     #endregion
 
-    private void SpawnLand(GridListenerData Amount)
+    private void SpawnLand(GridListenerData data)
     {
-        InitializeGrid();
-    }
-
-    /// <summary>
-    /// Creates and positions all tiles on the board
-    /// </summary>
-    private void InitializeGrid()
-    {
-        m_Pool = CreatePool();
-        ClearGrid();
-        _tiles = new List<Land>(TILE_COUNT_X * TILE_COUNT_Y);
-
-        for (int i = 0; i < TILE_COUNT_Y; i++)
+        if (!m_BuildConfig.Get(GameDefine.ConfigValue.LandId, 1, out BuildData landBuildData)) return;
+        if (m_lands.Count >= landBuildData.max_can_build)
         {
-            for (int j = 0; j < TILE_COUNT_X; j++)
-            {
-                CreateTile(i, j);
-            }
+            Debug.Log("Can Not Build More");
+            return;
         }
+
+        m_Pool ??= CreatePool();
+        int totalSpawned = m_lands.Count;
+        row = totalSpawned / GameDefine.ConfigValue.MaxTilesPerRow;
+        col = totalSpawned % GameDefine.ConfigValue.MaxTilesPerRow;
+        EventBus<GameplayEvent>.PostEvent((int)EventId_Gameplay.UnClockLand, new LandManager.UnclockLandRequest
+        {
+            LandIndex = row * GameDefine.ConfigValue.MaxTilesPerRow + col,
+            OnUnclockResult = OnCreateCallBack,
+        });
     }
+
     private void ClearGrid()
     {
-        if (_tiles == null) return;
-        foreach (var tile in _tiles)
+        if (m_lands == null) return;
+        foreach (var tile in m_lands)
         {
             m_Pool.Release(tile);
         }
-        _tiles.Clear();
+
+        m_lands.Clear();
+    }
+
+    private void OnCreateCallBack(bool IsSuccess)
+    {
+        if (IsSuccess)
+        {
+            CreateLand(row, col);
+        }
+
+        row = col = -1;
     }
 
     /// <summary>
     /// Creates a single tile at the specified grid position
     /// </summary>
-    private void CreateTile(int row, int col)
+    private void CreateLand(int row, int col)
     {
-        Land tile = m_Pool.Get();
-        tile.transform.position = new Vector3(col * TILE_SPACING_X, _PositionY, row * TILE_SPACING_Y);
-        tile.transform.SetParent(transform);
-        _tiles.Add(tile);
-        
-        tile.Setup(new LandPrefabData()
+        Land land = m_Pool.Get();
+        land.transform.position = new Vector3(col * TILE_SPACING_X, _PositionY, row * TILE_SPACING_Y);
+        land.transform.SetParent(transform);
+        m_lands.Add(land);
+
+        land.Setup(new LandPrefabData()
         {
-            LandIndex =  row * TILE_COUNT_X + col,
+            LandIndex = row * GameDefine.ConfigValue.MaxTilesPerRow + col,
             OnInteractCallback = OnSelectLand,
         });
     }
@@ -113,19 +122,19 @@ public class GridManager : MonoBehaviourEventListener
             landIndex = index,
             canBuildRespone = CanBuildLand,
             refuseBuildRespone = RefuseBuildLand
-        } );
+        });
     }
 
     private void CanBuildLand()
     {
-        
+        Debug.Log("Can Build Land");
     }
 
     private void RefuseBuildLand()
     {
-        
+        Debug.Log("Can't Build Land");
     }
-    
+
     #region Pool
 
     private IObjectPool<Land> CreatePool()

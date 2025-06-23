@@ -15,9 +15,196 @@ MonoBehaviour:
   serializationData:
     SerializedFormat: 2
     SerializedBytes: 
-    ReferencedUnityObjects: []
+    ReferencedUnityObjects:
+    - {fileID: 8487147714121848922, guid: 479578272603c444587e0edb78ec3b8e, type: 3}
+    - {fileID: 1527555662718005277, guid: 64bcfbe645f38c54295f6280100058dd, type: 3}
+    - {fileID: 587339260497027751, guid: e51773c940e240a4196581f98233ab63, type: 3}
     SerializedBytesString: 
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: DctPlant
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[PlantData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: plant_01
+    - Name: $v
+      Entry: 7
+      Data: 2|PlantData, Assembly-CSharp
+    - Name: plant_id
+      Entry: 1
+      Data: plant_01
+    - Name: plant_name
+      Entry: 1
+      Data: crop_tomato_txt
+    - Name: grow_time_per_yield
+      Entry: 3
+      Data: 10
+    - Name: yield_per_cycle
+      Entry: 3
+      Data: 1
+    - Name: max_yield
+      Entry: 3
+      Data: 40
+    - Name: product_id
+      Entry: 1
+      Data: product_02
+    - Name: item_type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: plant_02
+    - Name: $v
+      Entry: 7
+      Data: 3|PlantData, Assembly-CSharp
+    - Name: plant_id
+      Entry: 1
+      Data: plant_02
+    - Name: plant_name
+      Entry: 1
+      Data: crop_blueberry_txt
+    - Name: grow_time_per_yield
+      Entry: 3
+      Data: 15
+    - Name: yield_per_cycle
+      Entry: 3
+      Data: 1
+    - Name: max_yield
+      Entry: 3
+      Data: 40
+    - Name: product_id
+      Entry: 1
+      Data: product_03
+    - Name: item_type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: plant_03
+    - Name: $v
+      Entry: 7
+      Data: 4|PlantData, Assembly-CSharp
+    - Name: plant_id
+      Entry: 1
+      Data: plant_03
+    - Name: plant_name
+      Entry: 1
+      Data: crop_strawberry_txt
+    - Name: grow_time_per_yield
+      Entry: 3
+      Data: 5
+    - Name: yield_per_cycle
+      Entry: 3
+      Data: 1
+    - Name: max_yield
+      Entry: 3
+      Data: 20
+    - Name: product_id
+      Entry: 1
+      Data: product_04
+    - Name: item_type
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: DctCropBuildingsDataPrefabs
+      Entry: 7
+      Data: 5|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[CropBuilding,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 6|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 3
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: plant_01
+    - Name: $v
+      Entry: 10
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: plant_02
+    - Name: $v
+      Entry: 10
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: plant_03
+    - Name: $v
+      Entry: 10
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

@@ -1,10 +1,12 @@
+using System;
 using Score;
 using System.Collections.Generic;
+using Sirenix.Serialization;
 using UnityEngine;
 
 public class BuildConfig : BaseConfig<BuildData>
 {
-    public static Dictionary<string, BuildData> DctBuildData { get; private set; } = new();
+    [NonSerialized, OdinSerialize] public Dictionary<string, Dictionary<int, BuildData>> DctBuildData = new();
 
     public override void Load()
     {
@@ -12,41 +14,44 @@ public class BuildConfig : BaseConfig<BuildData>
 
         if (Data == null || Data.Length == 0)
         {
-#if UNITY_EDITOR
-            Debug.LogWarning("BuildConfig: No data found.");
-#endif
             return;
         }
 
         foreach (var data in Data)
         {
-            if (!DctBuildData.ContainsKey(data.building_id))
+            if (!DctBuildData.TryGetValue(data.building_id, out Dictionary<int, BuildData> buildDatas))
             {
-                DctBuildData.Add(data.building_id, data);
-#if UNITY_EDITOR
-                Debug.Log($"[BuildConfig] Added: {data.level}");
-#endif
+                buildDatas = new Dictionary<int, BuildData>();
+                DctBuildData[data.building_id] = buildDatas;
             }
-#if UNITY_EDITOR
-            else
-            {
-                Debug.LogWarning($"Duplicate key found: {data.building_id}");
-            }
-#endif
-        }
 
+            if (!buildDatas.TryGetValue(data.level, out BuildData buildData))
+            {
+                buildDatas[data.level] = data;
 #if UNITY_EDITOR
-        Debug.Log($"[BuildConfig] Loaded {DctBuildData.Count} entries.");
+                Debug.Log($"[BuildConfig] Added: {data.building_id} - Level {data.level}");
 #endif
+            }
+        }
     }
 
-    public static bool Get(string id, out BuildData result) =>
-        DctBuildData.TryGetValue(id, out result);
+    public bool Get(string id, int level, out BuildData  result)
+    {
+        {
+            result = default;
+            if (DctBuildData.TryGetValue(id, out var levels))
+            {
+                return levels.TryGetValue(level, out result);
+            }
+            return false;
+        }
+    }
 }
+
 [System.Serializable]
-public class BuildData
-{
-    public string building_id;
-    public int level;
-    public int max_can_build;
-}
+    public class BuildData
+    {
+        public string building_id;
+        public int level;
+        public int max_can_build;
+    }

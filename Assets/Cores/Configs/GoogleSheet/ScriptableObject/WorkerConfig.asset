@@ -20,4 +20,57 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: DctWorkerData
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[WorkerData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: woker_01
+    - Name: $v
+      Entry: 7
+      Data: 2|WorkerData, Assembly-CSharp
+    - Name: worker_id
+      Entry: 1
+      Data: woker_01
+    - Name: worker_name
+      Entry: 1
+      Data: woker
+    - Name: hire_cost
+      Entry: 3
+      Data: 500
+    - Name: action_time_per_task
+      Entry: 3
+      Data: 2
+    - Name: description
+      Entry: 1
+      Data: worker_description_text
+    - Name: item_type
+      Entry: 1
+      Data: Worker
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

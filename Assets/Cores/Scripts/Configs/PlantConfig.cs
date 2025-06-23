@@ -2,15 +2,18 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Score;
+using Sirenix.Serialization;
+using UnityEditor;
 
 public class PlantConfig : BaseConfig<PlantData>
 {
-    public static Dictionary<string, PlantData> DctPlant { get; private set; } = new();
+    [NonSerialized, OdinSerialize] public Dictionary<string, PlantData> DctPlant = new();
 
+    [NonSerialized, OdinSerialize] public Dictionary<string, CropBuilding> DctCropBuildingsDataPrefabs  = new();
     public override void Load()
     {
         DctPlant.Clear();
-
+        DctCropBuildingsDataPrefabs.Clear();
         foreach (var data in Data)
         {
             if (DctPlant.ContainsKey(data.plant_id)) continue;
@@ -19,9 +22,30 @@ public class PlantConfig : BaseConfig<PlantData>
 #if UNITY_EDITOR
         Debug.Log(DctPlant.Count);
 #endif
+        AssetDatabase.Refresh();
+        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[] { GameDefine.Path.CropPrefabPath });
+        Debug.Log($"{guids.Length} Crop prefabs found.");
+
+        foreach (string guid in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            var prefab = AssetDatabase.LoadAssetAtPath<CropBuilding>(path);
+            if (prefab == null) continue;
+
+            if (!DctCropBuildingsDataPrefabs.ContainsKey(prefab.name))
+            {
+                DctCropBuildingsDataPrefabs.Add(prefab.name, prefab);
+            }
+            else
+            {
+                Debug.LogWarning($"[AnimalConfig] Duplicate prefab name: {prefab.name}");
+            }
+        }
+
+        Debug.Log($"[AnimalConfig] Loaded {DctCropBuildingsDataPrefabs.Count} Animal prefabs.");
     }
 
-    public static bool GetPlant(string id, out PlantData result) => DctPlant.TryGetValue(id, out result);
+    public bool GetPlant(string id, out PlantData result) => DctPlant.TryGetValue(id, out result);
 }
 
 [Serializable]

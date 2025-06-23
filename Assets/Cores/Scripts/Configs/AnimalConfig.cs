@@ -2,15 +2,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Score;
 using System;
+using Sirenix.OdinInspector;
+using Sirenix.Serialization;
+using UnityEditor;
 
 public class AnimalConfig : BaseConfig<AnimalData>
 {
-    public static Dictionary<string, AnimalData> DctAnimalData { get; private set; } = new();
+    [NonSerialized, OdinSerialize] public Dictionary<string, AnimalData> DctAnimalData = new();
+    [NonSerialized, OdinSerialize] public Dictionary<string, AnimalBuilding> DctAnimalDataPrefabs = new();
 
     public override void Load()
     {
         DctAnimalData.Clear();
-
+        DctAnimalDataPrefabs.Clear();
         if (Data == null || Data.Length == 0)
         {
 #if UNITY_EDITOR
@@ -35,13 +39,29 @@ public class AnimalConfig : BaseConfig<AnimalData>
             }
 #endif
         }
+        AssetDatabase.Refresh();
+        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[] { GameDefine.Path.AnimalPrefabPath});
+        Debug.Log($"{guids.Length} Animal prefabs found.");
 
-#if UNITY_EDITOR
-        Debug.Log($"[AnimalConfig] Loaded {DctAnimalData.Count} entries.");
-#endif
+        foreach (string guid in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            var prefab = AssetDatabase.LoadAssetAtPath<AnimalBuilding>(path);
+            if (prefab == null) continue;
+
+            if (!DctAnimalDataPrefabs.ContainsKey(prefab.name))
+            {
+                DctAnimalDataPrefabs.Add(prefab.name, prefab);
+            }
+            else
+            {
+                Debug.LogWarning($"[AnimalConfig] Duplicate prefab name: {prefab.name}");
+            }
+        }
+
+        Debug.Log($"[AnimalConfig] Loaded {DctAnimalDataPrefabs.Count} Animal prefabs.");
     }
-
-    public static bool Get(string id, out AnimalData result) =>
+    public bool Get(string id, out AnimalData result) =>
         DctAnimalData.TryGetValue(id, out result);
 }
 

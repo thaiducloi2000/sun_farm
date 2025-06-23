@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using Score;
 using Sirenix.OdinInspector;
+using Sirenix.Serialization;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Starter Config", menuName = "Configs/StarterConfig")]
 public class StarterConfig : BaseConfig<StarterData>
 {
-    public static Dictionary<ItemType, StarterData> DctStarterData { get; private set; } = new();
+    [NonSerialized, OdinSerialize] public Dictionary<ItemType, StarterData> DctStarterData = new();
 
     public override void Load()
     {

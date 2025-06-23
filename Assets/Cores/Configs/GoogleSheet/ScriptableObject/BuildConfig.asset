@@ -20,4 +20,750 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: DctBuildData
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Collections.Generic.Dictionary`2[[System.Int32,
+        mscorlib],[BuildData, Assembly-CSharp]], mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.GenericEqualityComparer`1[[System.String,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 2
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: building_01
+    - Name: $v
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[BuildData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 3|System.Collections.Generic.GenericEqualityComparer`1[[System.Int32,
+        mscorlib]], mscorlib
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 27
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 4|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 1
+    - Name: max_can_build
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 5|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 2
+    - Name: max_can_build
+      Entry: 3
+      Data: 5
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 6|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 3
+    - Name: max_can_build
+      Entry: 3
+      Data: 8
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 7|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 4
+    - Name: max_can_build
+      Entry: 3
+      Data: 12
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 5
+    - Name: $v
+      Entry: 7
+      Data: 8|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 5
+    - Name: max_can_build
+      Entry: 3
+      Data: 17
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 6
+    - Name: $v
+      Entry: 7
+      Data: 9|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 6
+    - Name: max_can_build
+      Entry: 3
+      Data: 23
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 7
+    - Name: $v
+      Entry: 7
+      Data: 10|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 7
+    - Name: max_can_build
+      Entry: 3
+      Data: 30
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 8
+    - Name: $v
+      Entry: 7
+      Data: 11|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 8
+    - Name: max_can_build
+      Entry: 3
+      Data: 38
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 9
+    - Name: $v
+      Entry: 7
+      Data: 12|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 9
+    - Name: max_can_build
+      Entry: 3
+      Data: 47
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 10
+    - Name: $v
+      Entry: 7
+      Data: 13|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 10
+    - Name: max_can_build
+      Entry: 3
+      Data: 57
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 11
+    - Name: $v
+      Entry: 7
+      Data: 14|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 11
+    - Name: max_can_build
+      Entry: 3
+      Data: 68
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 12
+    - Name: $v
+      Entry: 7
+      Data: 15|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 12
+    - Name: max_can_build
+      Entry: 3
+      Data: 80
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 13
+    - Name: $v
+      Entry: 7
+      Data: 16|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 13
+    - Name: max_can_build
+      Entry: 3
+      Data: 93
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 14
+    - Name: $v
+      Entry: 7
+      Data: 17|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 14
+    - Name: max_can_build
+      Entry: 3
+      Data: 107
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 15
+    - Name: $v
+      Entry: 7
+      Data: 18|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 15
+    - Name: max_can_build
+      Entry: 3
+      Data: 122
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 16
+    - Name: $v
+      Entry: 7
+      Data: 19|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 16
+    - Name: max_can_build
+      Entry: 3
+      Data: 138
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 17
+    - Name: $v
+      Entry: 7
+      Data: 20|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 17
+    - Name: max_can_build
+      Entry: 3
+      Data: 155
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 18
+    - Name: $v
+      Entry: 7
+      Data: 21|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 18
+    - Name: max_can_build
+      Entry: 3
+      Data: 173
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 19
+    - Name: $v
+      Entry: 7
+      Data: 22|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 19
+    - Name: max_can_build
+      Entry: 3
+      Data: 192
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 20
+    - Name: $v
+      Entry: 7
+      Data: 23|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 20
+    - Name: max_can_build
+      Entry: 3
+      Data: 212
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 21
+    - Name: $v
+      Entry: 7
+      Data: 24|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 21
+    - Name: max_can_build
+      Entry: 3
+      Data: 233
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 22
+    - Name: $v
+      Entry: 7
+      Data: 25|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 22
+    - Name: max_can_build
+      Entry: 3
+      Data: 255
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 23
+    - Name: $v
+      Entry: 7
+      Data: 26|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 23
+    - Name: max_can_build
+      Entry: 3
+      Data: 278
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 24
+    - Name: $v
+      Entry: 7
+      Data: 27|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 24
+    - Name: max_can_build
+      Entry: 3
+      Data: 302
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 25
+    - Name: $v
+      Entry: 7
+      Data: 28|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 25
+    - Name: max_can_build
+      Entry: 3
+      Data: 327
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 26
+    - Name: $v
+      Entry: 7
+      Data: 29|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 26
+    - Name: max_can_build
+      Entry: 3
+      Data: 353
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 27
+    - Name: $v
+      Entry: 7
+      Data: 30|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_01
+    - Name: level
+      Entry: 3
+      Data: 27
+    - Name: max_can_build
+      Entry: 3
+      Data: 380
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 1
+      Data: building_02
+    - Name: $v
+      Entry: 7
+      Data: 31|System.Collections.Generic.Dictionary`2[[System.Int32, mscorlib],[BuildData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 3
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 32|BuildData, Assembly-CSharp
+    - Name: building_id
+      Entry: 1
+      Data: building_02
+    - Name: level
+      Entry: 3
+      Data: 3
+    - Name: max_can_build
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 

@@ -2,9 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Score;
 using System;
+using Sirenix.Serialization;
+
 public class FarmUpgradeConfig : BaseConfig<FarmUpgradeData>
 {
-    public static Dictionary<int, FarmUpgradeData> DctFarmUpgradeData { get; private set; } = new();
+    [NonSerialized, OdinSerialize] public  Dictionary<int, FarmUpgradeData> DctFarmUpgradeData = new();
 
     public override void Load()
     {
@@ -40,7 +42,7 @@ public class FarmUpgradeConfig : BaseConfig<FarmUpgradeData>
 #endif
     }
 
-    public static bool Get(int level, out FarmUpgradeData result) =>
+    public bool Get(int level, out FarmUpgradeData result) =>
         DctFarmUpgradeData.TryGetValue(level, out result);
 }
 [Serializable]

@@ -2,9 +2,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Score;
 using System;
+using Sirenix.Serialization;
+
 public class StoreConfig : BaseConfig<StoreData>
 {
-    public static Dictionary<string, StoreData> DctStoreData { get; private set; } = new();
+    [NonSerialized, OdinSerialize] public Dictionary<string, StoreData> DctStoreData = new();
 
     public override void Load()
     {
@@ -40,7 +42,7 @@ public class StoreConfig : BaseConfig<StoreData>
 #endif
     }
 
-    public static bool Get(string id, out StoreData result) =>
+    public bool Get(string id, out StoreData result) =>
         DctStoreData.TryGetValue(id, out result);
 }
 [Serializable]

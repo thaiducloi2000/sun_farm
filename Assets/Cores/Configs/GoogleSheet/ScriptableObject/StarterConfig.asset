@@ -20,4 +20,150 @@ MonoBehaviour:
     Prefab: {fileID: 0}
     PrefabModificationsReferencedUnityObjects: []
     PrefabModifications: []
-    SerializationNodes: []
+    SerializationNodes:
+    - Name: DctStarterData
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[ItemType, Assembly-CSharp],[StarterData,
+        Assembly-CSharp]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[ItemType, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 5
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 7
+      Data: 2|StarterData, Assembly-CSharp
+    - Name: item_type
+      Entry: 3
+      Data: 0
+    - Name: item_id
+      Entry: 1
+      Data: plant_01
+    - Name: amount
+      Entry: 3
+      Data: 10
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 1
+    - Name: $v
+      Entry: 7
+      Data: 3|StarterData, Assembly-CSharp
+    - Name: item_type
+      Entry: 3
+      Data: 1
+    - Name: item_id
+      Entry: 1
+      Data: animal_01
+    - Name: amount
+      Entry: 3
+      Data: 2
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 3
+    - Name: $v
+      Entry: 7
+      Data: 4|StarterData, Assembly-CSharp
+    - Name: item_type
+      Entry: 3
+      Data: 3
+    - Name: item_id
+      Entry: 1
+      Data: building_01
+    - Name: amount
+      Entry: 3
+      Data: 3
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 2
+    - Name: $v
+      Entry: 7
+      Data: 5|StarterData, Assembly-CSharp
+    - Name: item_type
+      Entry: 3
+      Data: 2
+    - Name: item_id
+      Entry: 1
+      Data: woker_01
+    - Name: amount
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 4
+    - Name: $v
+      Entry: 7
+      Data: 6|StarterData, Assembly-CSharp
+    - Name: item_type
+      Entry: 3
+      Data: 4
+    - Name: item_id
+      Entry: 1
+      Data: equipment_01
+    - Name: amount
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
