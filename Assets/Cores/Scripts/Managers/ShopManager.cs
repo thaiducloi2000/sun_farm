@@ -48,129 +48,87 @@ public class ShopManager : MonoBehaviourEventListener
     }
 
     private void Buy_seed_blueberry()
-    {
-        if (!m_StoreConfig.Get("item_store_02", out StoreData itemData))
-        {
-            Debug.Log($"[ShopManager] Not Found item: item_store_02");
-            return;
-        }
+    {        if (!BuyItem("item_store_02", out var itemData)) return;
+        if (!m_PlayerDataManager.PlayerCommon.SubGold(itemData.price)) return;
 
-        if (m_PlayerDataManager.PlayerCommon.Data.Gold < itemData.price)
-        {
-            Debug.Log($"[ShopManager] Gold Not Enought for Buy : item_store_02 - Require {itemData.price}");
-            return;
-        }
-
-        int oldGold = m_PlayerDataManager.PlayerCommon.Data.Gold;
-        int newGold = m_PlayerDataManager.PlayerCommon.Data.Gold - itemData.price;
-        UITextNumberData goldData = new UITextNumberData()
-        {
-            OldNumber = oldGold,
-            NewNumber = newGold
-        };
-        EventBus<UIEvent>.PostEvent((int)EventId_UI.OnGoldValueChange, goldData);
-
-        int oldSeed = m_PlayerDataManager.PlayerCommon.Data.BlueBerry_Crop;
-        int newSeed = m_PlayerDataManager.PlayerCommon.Data.BlueBerry_Crop + 1;
-
-        UITextNumberData blueBerryCrop = new UITextNumberData()
-        {
-            OldNumber = oldSeed,
-            NewNumber = newSeed
-        };
-        EventBus<UIEvent>.PostEvent((int)EventId_UI.OnCropChange_BlueBerry, blueBerryCrop);
+        int oldCow = m_PlayerDataManager.PlayerCommon.Data.BlueBerry_Crop;
+        int newCow = m_PlayerDataManager.PlayerCommon.Data.BlueBerry_Crop + 1;
+        m_PlayerDataManager.PlayerCommon.PostUIChange(EventId_UI.OnCropChange_BlueBerry, oldCow, newCow);
+        m_PlayerDataManager.PlayerCommon.Data.BlueBerry_Crop += 1;
     }
 
     private void Buy_seed_tomato()
     {
-        if (!m_StoreConfig.Get("item_store_01", out StoreData itemData))
-        {
-            Debug.Log($"[ShopManager] Not Found item: item_store_01");
-            return;
-        }
+        if (!BuyItem("item_store_01", out var itemData)) return;
+        if (!m_PlayerDataManager.PlayerCommon.SubGold(itemData.price)) return;
 
-        if (m_PlayerDataManager.PlayerCommon.Data.Gold < itemData.price)
-        {
-            Debug.Log($"[ShopManager] Gold Not Enought for Buy : item_store_01 - Require {itemData.price}");
-            return;
-        }
-
-        int oldGold = m_PlayerDataManager.PlayerCommon.Data.Gold;
-        int newGold = m_PlayerDataManager.PlayerCommon.Data.Gold - itemData.price;
-        UITextNumberData goldData = new UITextNumberData()
-        {
-            OldNumber = oldGold,
-            NewNumber = newGold
-        };
-        EventBus<UIEvent>.PostEvent((int)EventId_UI.OnGoldValueChange, goldData);
-
-        int oldSeed = m_PlayerDataManager.PlayerCommon.Data.Tomato_Crop;
-        int newSeed = m_PlayerDataManager.PlayerCommon.Data.Tomato_Crop + 1;
-
-        UITextNumberData tomatoCrop = new UITextNumberData()
-        {
-            OldNumber = oldSeed,
-            NewNumber = newSeed
-        };
-        EventBus<UIEvent>.PostEvent((int)EventId_UI.OnCropChange_Tomato, tomatoCrop);
+        int oldCow = m_PlayerDataManager.PlayerCommon.Data.Tomato_Crop;
+        int newCow = m_PlayerDataManager.PlayerCommon.Data.Tomato_Crop + 1;
+        m_PlayerDataManager.PlayerCommon.PostUIChange(EventId_UI.OnCropChange_Tomato, oldCow, newCow);
+        m_PlayerDataManager.PlayerCommon.Data.Tomato_Crop += 1;
     }
 
     private void Buy_animal_cow()
     {
-        if (!m_StoreConfig.Get("item_store_03", out StoreData itemData))
-        {
-            Debug.Log($"[ShopManager] Not Found item: item_store_03");
-            return;
-        }
-
-        if (m_PlayerDataManager.PlayerCommon.Data.Gold < itemData.price)
-        {
-            Debug.Log($"[ShopManager] Gold Not Enought for Buy : item_store_03 - Require {itemData.price}");
-            return;
-        }
-
-        int oldGold = m_PlayerDataManager.PlayerCommon.Data.Gold;
-        int newGold = m_PlayerDataManager.PlayerCommon.Data.Gold - itemData.price;
-        UITextNumberData goldData = new UITextNumberData()
-        {
-            OldNumber = oldGold,
-            NewNumber = newGold
-        };
-        EventBus<UIEvent>.PostEvent((int)EventId_UI.OnGoldValueChange, goldData);
+        if (!BuyItem("item_store_03", out var itemData)) return;
+        if (!m_PlayerDataManager.PlayerCommon.SubGold(itemData.price)) return;
 
         int oldCow = m_PlayerDataManager.PlayerCommon.Data.Cow;
         int newCow = m_PlayerDataManager.PlayerCommon.Data.Cow + 1;
-
-        UITextNumberData tomatoCrop = new UITextNumberData()
-        {
-            OldNumber = oldCow,
-            NewNumber = newCow
-        };
-        EventBus<UIEvent>.PostEvent((int)EventId_UI.OnAmountCowChange, tomatoCrop);
+        m_PlayerDataManager.PlayerCommon.PostUIChange(EventId_UI.OnAmountCowChange, oldCow, newCow);
+        m_PlayerDataManager.PlayerCommon.Data.Cow += 1;
     }
 
     private void Buy_land()
     {
-        if (!m_StoreConfig.Get("item_store_04", out StoreData itemData))
+        string itemStoreId = "item_store_04";
+        if (!m_StoreConfig.Get(itemStoreId, out var item))
         {
-            Debug.Log($"[ShopManager] Not Found item: item_store_04");
+            Debug.Log($"[ShopManager] Not Found item: {itemStoreId}");
             return;
         }
 
-        if (m_PlayerDataManager.PlayerCommon.Data.Gold < itemData.price)
+        var buildings = m_PlayerDataManager.PlayerFarmData.Data.Buildings;
+        var landIndex = buildings.FindIndex(x => x.id == item.item_id && x.amount > 0);
+
+        if (landIndex >= 0)
         {
-            Debug.Log($"[ShopManager] Gold Not Enought for Buy : item_store_04 - Require {itemData.price}");
+            var resource = buildings[landIndex];
+            EventBus<UIEvent>.PostEvent((int)EventId_UI.OnLandChange, new UITextNumberData()
+            {
+                OldNumber = resource.amount,
+                NewNumber = resource.amount - 1
+            });
+            resource.amount -= 1;
+            buildings[landIndex] = resource;
+
+            Debug.Log($"[ShopManager] Dùng 1 land từ kho có sẵn. Còn lại: {resource.amount}");
+
+            EventBus<GameplayEvent>.PostEvent((int)EventId_Gameplay.SpawnLand, new GridListenerData() { amount = 1 });
             return;
         }
 
-        int oldGold = m_PlayerDataManager.PlayerCommon.Data.Gold;
-        int newGold = m_PlayerDataManager.PlayerCommon.Data.Gold - itemData.price;
-        UITextNumberData goldData = new UITextNumberData()
-        {
-            OldNumber = oldGold,
-            NewNumber = newGold
-        };
-        EventBus<UIEvent>.PostEvent((int)EventId_UI.OnGoldValueChange, goldData);
+        Debug.Log(1);
+        if (!BuyItem(itemStoreId, out var itemData)) return;
         EventBus<GameplayEvent>.PostEvent((int)EventId_Gameplay.SpawnLand, new GridListenerData() { amount = 1 });
+    }
+
+    private bool BuyItem(string storeId, out StoreData itemData)
+    {
+        itemData = default;
+
+        if (!m_StoreConfig.Get(storeId, out itemData))
+        {
+            Debug.Log($"[ShopManager] Not Found item: {storeId}");
+            return false;
+        }
+
+        if (!m_PlayerDataManager.PlayerCommon.SubGold(itemData.price))
+        {
+            Debug.Log($"[ShopManager] Not enough gold to buy: {storeId}");
+            return false;
+        }
+
+        return true;
     }
 }

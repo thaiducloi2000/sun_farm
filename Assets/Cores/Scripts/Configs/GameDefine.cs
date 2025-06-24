@@ -76,9 +76,10 @@ namespace Score
         OnBlueBerryChange,
         OnStrawBerryChange,
         OnMilkChange,
+        OnLandChange,
         
         // UI Click
-        Click_Buy,
+        Click_Buy = 5000,
     }
     #endregion
 }
