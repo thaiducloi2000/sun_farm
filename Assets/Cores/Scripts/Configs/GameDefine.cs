@@ -32,6 +32,11 @@ namespace Score
         public Action canBuildRespone;
         public Action refuseBuildRespone;
     }
+
+    public struct OnSelectBuildAtLand : IEventData
+    {
+        public Action<BuildingBase> OnBuildingBuildCallBack;
+    }
     
     [Serializable]
     public struct GridListenerData : IEventData
@@ -51,6 +56,7 @@ namespace Score
         //Grid
         SpawnLand = 1000,
         UnClockLand,
+        RequestBuildingAtLand ,
         RequestBuildAtLand = 5000,
         
         Click_Buy_Crop_Tomato,
@@ -58,6 +64,11 @@ namespace Score
         Click_Buy_Crop_StrawBerry,
         Click_Buy_Land,
         Click_Buy_Cow,
+        
+        Click_Build_Tomato = 6000,
+        Click_Build_BlueBerry,
+        Click_Build_StrawBerry,
+        Click_Build_Cow,
     }
     #endregion
     #region EventId_UI
@@ -65,6 +76,8 @@ namespace Score
     {
         None = 0,
         
+        OnShowUiBuild = 400,
+        OnHideUIBuild = 500,
         // OnValue Change
         OnGoldValueChange = 1000,
         OnLevelChange,
@@ -80,6 +93,7 @@ namespace Score
         
         // UI Click
         Click_Buy = 5000,
+        Click_Build = 6000,
     }
     #endregion
 }

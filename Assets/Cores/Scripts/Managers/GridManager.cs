@@ -27,6 +27,7 @@ public class GridManager : MonoBehaviourEventListener
 
     private int row;
     private int col;
+    private int currentSelectedLand = -1;
 
     /// <summary>
     /// Initializes the chess board grid
@@ -111,6 +112,7 @@ public class GridManager : MonoBehaviourEventListener
 
     private void OnSelectLand(int index)
     {
+        currentSelectedLand = index;
         EventBus<GameplayEvent>.PostEvent((int)EventId_Gameplay.RequestBuildAtLand, new RequestBuildAtLand()
         {
             landIndex = index,
@@ -121,7 +123,23 @@ public class GridManager : MonoBehaviourEventListener
 
     private void CanBuildLand()
     {
-        Debug.Log("Can Build Land");
+        if (currentSelectedLand < 0) return;
+        EventBus<UIEvent>.PostEvent((int)EventId_UI.OnShowUiBuild, new OnSelectBuildAtLand()
+        {
+            OnBuildingBuildCallBack = OnBuildingBuildCallBack
+        });
+    }
+
+    private void OnBuildingBuildCallBack(BuildingBase data)
+    {
+        if (currentSelectedLand < 0) return;
+        EventBus<GameplayEvent>.PostEvent((int)EventId_Gameplay.RequestBuildingAtLand, new RequestBuildingAtLandData()
+        {
+            index = currentSelectedLand,
+            BuildingData = data,
+            position = m_lands[currentSelectedLand].transform.position,
+        });
+        currentSelectedLand = -1;
     }
 
     private void RefuseBuildLand()

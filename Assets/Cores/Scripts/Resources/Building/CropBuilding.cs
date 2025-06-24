@@ -1,18 +1,20 @@
 using UnityEngine;
 
-public class CropBuilding : BuildingBase<PlantBuildData>
+public class CropBuilding : BuildingBase
 {
-    public override void Setup(PlantBuildData data)
+    public PlantBuildData PlantBuildData { get; private set; }
+
+    public override IBuildData Data => PlantBuildData;
+
+    public override void Setup(IBuildData data)
     {
-        if (data.PlantData == null)
+        if (data is not PlantBuildData dt) return;
+        if (dt.PlantData == null)
         {
-#if UNITY_EDITOR
-            Debug.LogWarning("Setup failed: PlantData is null.");
-#endif
             return;
         }
 
-        m_data = data;
+        PlantBuildData = dt;
     }
 
     public override bool BuildAt(int index)
@@ -25,10 +27,10 @@ public class CropBuilding : BuildingBase<PlantBuildData>
             return false;
         }
 
-        m_buildingState.SetState(m_data.current_yield_count > 0 ? 1 : 0);
-        m_data.PlaceAt(index);
+        m_buildingState.SetState(PlantBuildData.current_yield_count > 0 ? 1 : 0);
+        PlantBuildData.PlaceAt(index);
         return true;
     }
 
-    public override IResource CollectResource() => m_data;
+    public override IResource CollectResource() => PlantBuildData;
 }

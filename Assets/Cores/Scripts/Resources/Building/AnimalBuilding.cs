@@ -1,16 +1,20 @@
 using UnityEngine;
 
-public class AnimalBuilding : BuildingBase<AnimalBuildData>
+public class AnimalBuilding : BuildingBase
 {
-    public override void Setup(AnimalBuildData data)
+    private AnimalBuildData AnimalBuildData;
+
+    public override IBuildData Data => AnimalBuildData;
+
+    public override void Setup(IBuildData data)
     {
-        if (data.animalData == null)
+        if (data is not AnimalBuildData dt) return;
+        if (dt.animalData == null)
         {
             Debug.LogWarning("Setup failed: AnimalData is null.");
             return;
         }
-
-        m_data = data;
+        AnimalBuildData = dt;
     }
 
     public override bool BuildAt(int index)
@@ -21,19 +25,19 @@ public class AnimalBuilding : BuildingBase<AnimalBuildData>
             return false;
         }
 
-        m_data.PlaceAt(index);
+        AnimalBuildData.PlaceAt(index);
         return true;
     }
 
     public override IResource CollectResource()
     {
-        if (m_data.amount <= 0)
+        if (AnimalBuildData.amount <= 0)
         {
             Debug.Log("No animal products to collect.");
             return null;
         }
 
-        m_data.Collect();
-        return m_data;
+        AnimalBuildData.Collect();
+        return AnimalBuildData;
     }
 }
