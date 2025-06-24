@@ -9,12 +9,6 @@ using UnityEngine.Serialization;
 
 public class GridManager : MonoBehaviourEventListener
 {
-    [Serializable]
-    public struct GridListenerData : IEventData
-    {
-        public int amount;
-    }
-
     [Tooltip("Size of each tile")] public float TILE_SPACING_X;
     [Tooltip("Size of each tile")] public float TILE_SPACING_Y;
 

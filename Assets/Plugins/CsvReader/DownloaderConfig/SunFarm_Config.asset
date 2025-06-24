@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3061a3b7f16d5943b5819522e089b7e, type: 3}
   m_Name: SunFarm_Config
   m_EditorClassIdentifier: 
-  isDownloading: 0
+  isDownloading: 1
   googleSheetId: 1vgSpVIlwJsNwNhNNpD1Olsp8BUroJ3fPJqqj5bVkp-Q
   subFolder: 
   sheetsConfig:

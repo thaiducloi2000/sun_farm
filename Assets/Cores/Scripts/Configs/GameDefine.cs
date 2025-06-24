@@ -33,6 +33,11 @@ namespace Score
         public Action refuseBuildRespone;
     }
     
+    [Serializable]
+    public struct GridListenerData : IEventData
+    {
+        public int amount;
+    }
     #region Marker Class for Event bus System 
     public class GameplayEvent : IEventChannel { }
     public class UIEvent : IEventChannel { }
@@ -47,6 +52,12 @@ namespace Score
         SpawnLand = 1000,
         UnClockLand,
         RequestBuildAtLand = 5000,
+        
+        Click_Buy_Crop_Tomato,
+        Click_Buy_Crop_BlueBerry,
+        Click_Buy_Crop_StrawBerry,
+        Click_Buy_Land,
+        Click_Buy_Cow,
     }
     #endregion
     #region EventId_UI
@@ -66,7 +77,8 @@ namespace Score
         OnStrawBerryChange,
         OnMilkChange,
         
-        // Request Popup
+        // UI Click
+        Click_Buy,
     }
     #endregion
 }

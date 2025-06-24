@@ -52,7 +52,7 @@ MonoBehaviour:
       Data: Seed
     - Name: item_id
       Entry: 1
-      Data: animal_01
+      Data: plant_01
     - Name: price
       Entry: 3
       Data: 30
@@ -82,7 +82,7 @@ MonoBehaviour:
       Data: Seed
     - Name: item_id
       Entry: 1
-      Data: plant_01
+      Data: plant_02
     - Name: price
       Entry: 3
       Data: 50
@@ -112,7 +112,7 @@ MonoBehaviour:
       Data: Animal
     - Name: item_id
       Entry: 1
-      Data: plant_02
+      Data: animal_01
     - Name: price
       Entry: 3
       Data: 100
@@ -139,16 +139,16 @@ MonoBehaviour:
       Data: item_store_04
     - Name: item_type
       Entry: 1
-      Data: Seed
+      Data: Building
     - Name: item_id
       Entry: 1
-      Data: plant_03
+      Data: building_01
     - Name: price
       Entry: 3
-      Data: 400
+      Data: 500
     - Name: bulk_size
       Entry: 3
-      Data: 10
+      Data: 1
     - Name: 
       Entry: 8
       Data: 

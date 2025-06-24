@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerDataManager : MonoBehaviour
 {
     [field: SerializeField] public PlayerFarmData PlayerFarmData { get; private set; }
+    [field: SerializeField] public PlayerCommon PlayerCommon { get; private set; }
     public Action OnGameFocus = default;
     private bool _isGamePause = false;
 
@@ -44,11 +45,13 @@ public class PlayerDataManager : MonoBehaviour
     
     private void LoadData()
     {
+        PlayerCommon.Load();
         PlayerFarmData.Load();
     }
 
     public void SaveData()
     {
         PlayerFarmData.Save();
+        PlayerCommon.Save();
     }
 }

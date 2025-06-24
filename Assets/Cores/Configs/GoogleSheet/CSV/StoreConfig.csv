@@ -1,5 +1,5 @@
 item_store_id,item_type,item_id,price,bulk_size
-item_store_01,Seed,animal_01,30,10
-item_store_02,Seed,plant_01,50,10
-item_store_03,Animal,plant_02,100,10
-item_store_04,Seed,plant_03,400,10
+item_store_01,Seed,plant_01,30,10
+item_store_02,Seed,plant_02,50,10
+item_store_03,Animal,animal_01,100,10
+item_store_04,Building,building_01,500,1
